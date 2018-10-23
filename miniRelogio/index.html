@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Mini Relogio</title>
+</head>
+
+<body>
+	<div id="relogio" style="font-size: 24px; font-weight: bold; color: white; background-color: black; border-radius: 4px; padding: 20px; display: inline-block"></div>
+
+	<script type="text/javascript">
+		window.setInterval(function () {
+			now = new Date();
+			function format_time(time) {
+				if (time >= 0 && time <= 9) {
+					var formatted_time = time.toString();
+					formatted_time = "0" + formatted_time;
+				} else {
+					var formatted_time = time.toString();
+				}
+				return formatted_time;
+			}
+
+			document.getElementById("relogio").innerHTML = format_time(now.getHours()) + ':' + format_time(now.getMinutes()) + ':' + format_time(now.getSeconds());
+		}, 1000);
+	</script>
+</body>
+
+</html>
