@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mini Cronometro</title>
+</head>
+
+<body>
+
+    <div id="cronometro" style="font-size: 30px; font-weight: bold; color: white; background-color: black; border-radius: 4px; padding: 20px; display: inline-block">00:00:00
+        00</div>
+    <br><br>
+    <button id="comecar_parar" style="font-size: 15px; font-weight: bold; color: white; background-color: green; border-radius: 4px; padding: 20px; display: inline-block">Começar</button>
+    <button id="zerar" style="font-size: 15px; font-weight: bold; color: white; background-color: red; border-radius: 4px; padding: 20px; display: inline-block">Zerar</button>
+
+    <script type="text/javascript">
+        var mil = 0;
+        var seg = 0;
+        var min = 0;
+        var hor = 0;
+        var start = false;
+
+        document.getElementById("comecar_parar").onclick = function () {
+            if (!start) {
+                start = true;
+                document.getElementById("comecar_parar").innerHTML = "Parar";
+
+                initCronometro = window.setInterval(function () {
+                    mil++;
+                    if (mil >= 100) {
+                        seg++;
+                        mil = 0;
+                        if (seg >= 60) {
+                            min++;
+                            seg = 0;
+                            if (min >= 60) {
+                                hor++;
+                                min = 0;
+                            }
+                        }
+                    }
+                    document.getElementById("cronometro").innerHTML = addZeroLeft(hor) + ':' + addZeroLeft(min) + ':' + addZeroLeft(seg) + ' ' + addZeroLeft(mil);
+                }, 10);
+            } else {
+                window.clearInterval(initCronometro)
+                start = false;
+                document.getElementById("comecar_parar").innerHTML = "Começar";
+            }
+        }
+
+        document.getElementById("zerar").onclick = function () {
+            window.clearInterval(initCronometro)
+            start = false;
+            document.getElementById("comecar_parar").innerHTML = "Começar";
+            document.getElementById("cronometro").innerHTML = "00:00:00 00";
+            zerarVariaveis()
+
+        }
+
+        function zerarVariaveis() {
+            mil = 0;
+            seg = 0;
+            min = 0;
+            hor = 0;
+        }
+
+        function addZeroLeft(number) {
+            if (number <= 9) {
+                return "0" + number.toString();
+            } else {
+                return number.toString();
+            }
+        }
+
+    </script>
+</body>
+
+</html>
