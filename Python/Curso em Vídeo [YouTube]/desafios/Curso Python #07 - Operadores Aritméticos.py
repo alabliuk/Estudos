@@ -18,7 +18,7 @@ print(f'Média: {(n1+n2)/2}')
 
 # Desafio 08
 print('\n\nDesafio 08')
-metros = int(input('metros: '))
+metros = float(input('metros: '))
 print(f'centimetros: {metros * 100}')
 print(f'milimetros: {metros * 1000}')
 
