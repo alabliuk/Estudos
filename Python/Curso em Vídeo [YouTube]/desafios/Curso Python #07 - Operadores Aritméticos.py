@@ -12,8 +12,8 @@ print(f'Numero: {x}, Dobro: {x*2}, Triplo: {x*3}, Raiz Quadrada {x**(1/2)}')
 
 # Desafio 07
 print('\n\nDesafio 07')
-n1 = int(input('Digite a nota 1: '))
-n2 = int(input('Digite a nota 2: '))
+n1 = float(input('Digite a nota 1: '))
+n2 = float(input('Digite a nota 2: '))
 print(f'Média: {(n1+n2)/2}')
 
 # Desafio 08
