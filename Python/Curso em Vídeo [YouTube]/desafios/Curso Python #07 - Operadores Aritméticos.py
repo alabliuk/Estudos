@@ -46,16 +46,16 @@ area = largura * altura
 
 print(f'Altura: {altura} x Largura: {largura} = Area: {area}')
 print(
-    f'Será necessario {area/4} litros de tinta || 1 litro de tinta = 4 metros')
+    f'Será necessario {area/2:.2f} litros de tinta || 1 litro de tinta = 2 metros')
 
 # Desafio 12
-print('\n\nDesafio 012')
+print('\n\nDesafio 12')
 preco = float(input('Preço Produto: '))
 print(
-    f'Preço original: {preco} || Preço com 5% de desconto: {preco - (5 * (preco/100))} ')
+    f'Preço original: {preco:.2f} || Preço com 5% de desconto: {preco - (5 * (preco/100)):.2f} ')
 
 # Desafio 13
 print('\n\nDesafio 13')
 sal = float(input('Salario: '))
 print(
-    f'Salario atual: {sal} || Salario com aumento de 15%: {sal + (15 * (sal/100))}')
+    f'Salario atual: {sal} || Salario com aumento de 15%: {sal + (15 * (sal/100)):.2f}')
