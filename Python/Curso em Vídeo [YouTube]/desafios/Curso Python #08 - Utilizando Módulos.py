@@ -1,8 +1,11 @@
 # https://www.youtube.com/watch?v=oOUyhGNib2Q&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6
 
 import math
-import emoji
 import random
+
+import emoji
+import pygame
+
 print(emoji.emojize('Olá! :smiley:', use_aliases=True))
 
 print('*=' * 50)
@@ -14,7 +17,7 @@ print(f'Numero digitado: {num} \nParte inteira: {math.trunc(num)}')
 
 
 # Desafio 17
-print('\n\nDesafio 17') 
+print('\n\nDesafio 17')
 cat_oposto = float(input('Insira o valor do cateto oposto: '))
 cat_adjacente = float(input('Insira o valor do cateto adjacente: '))
 print(
@@ -47,5 +50,14 @@ print(
 
 
 # Desafio 21
-print('\n\nDesafio 21')
-# --> Reproduzir mp3
+print('\n\nDesafio 21 --> Reproduzir mp3 ')
+
+# Inicializando o mixer PyGame
+pygame.mixer.init()
+
+# Iniciando o Pygame
+pygame.init()
+
+pygame.mixer.music.load('C:\_GitHub\Estudos\Python\Curso em Vídeo [YouTube]\desafios\sample_audio.mp3')
+pygame.mixer.music.play()
+pygame.event.wait()
