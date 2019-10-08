@@ -14,7 +14,7 @@ print(f'Numero digitado: {num} \nParte inteira: {math.trunc(num)}')
 
 
 # Desafio 17
-print('\n\nDesafio 17')
+print('\n\nDesafio 17') 
 cat_oposto = float(input('Insira o valor do cateto oposto: '))
 cat_adjacente = float(input('Insira o valor do cateto adjacente: '))
 print(
@@ -24,7 +24,7 @@ print(
 # Desafio 18
 print('\n\nDesafio 18')
 angulo = float(input('Angulo: '))
-print(f'Seno: {math.sin(angulo)}\nCosseno: {math.cos(angulo)}\nTangente: {math.tan(angulo)}')
+print(f'Seno: {math.sin(math.radians(angulo)):.2f}\nCosseno: {math.cos(math.radians(angulo)):.2f}\nTangente: {math.tan(math.radians(angulo)):.2f}')
 
 
 # Desafio 19
