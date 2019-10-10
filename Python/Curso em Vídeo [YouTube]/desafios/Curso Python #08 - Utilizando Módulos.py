@@ -58,6 +58,7 @@ pygame.mixer.init()
 # Iniciando o Pygame
 pygame.init()
 
-pygame.mixer.music.load('C:\_GitHub\Estudos\Python\Curso em Vídeo [YouTube]\desafios\sample_audio.mp3')
+pygame.mixer.music.load(
+    'C:\zGitHub\Estudos\Python\Curso em Vídeo [YouTube]\desafios\sample_audio.mp3')
 pygame.mixer.music.play()
 pygame.event.wait()
