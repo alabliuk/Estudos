@@ -2,6 +2,7 @@
 
 from datetime import date
 from random import choice
+from time import sleep
 
 # Desafio 36
 print('\n\nDesafio 36')
@@ -69,7 +70,7 @@ print(f'Media: {media}')
 if(media < 5):
     print('REPROVADO')
 elif(media >= 7):
-    print('REPROVADO')
+    print('APROVADO')
 else:
     print('RECUPERAÇÃO')
 
@@ -82,11 +83,11 @@ idade = anoCorrente - nasc
 print(f'Idade: {idade}')
 if(idade <= 9):
     print('Categoria: MIRIM')
-elif(idade > 9 and idade <= 14):
+elif(idade <= 14):
     print('Categoria: INFANTIL')
-elif(idade > 14 and idade <= 19):
-    print('Categoria: INFANTIL')
-elif(idade > 19 and idade <= 20):
+elif(idade <= 19):
+    print('Categoria: JUNIOR')
+elif(idade <= 25):
     print('Categoria: SENIOR')
 else:
     print('Categoria: MASTER')
@@ -98,11 +99,11 @@ n1 = float(input('Valor n1: '))
 n2 = float(input('Valor n2: '))
 n3 = float(input('Valor n3: '))
 
-if(n1 == n2 and n2 == n3):
+if(n1 == n2 == n3):
     print('Triangulo EQUILATERO')
 elif(n1 == n2 or n2 == n3 or n3 == n1):
     print('Triangulo ISOCELES')
-elif((n1 != n2 and n2 != n3) and (n1 + n2 > n3 and n2 + n3 > n1 and n3 + n1 > n2)):
+elif((n1 != n2 != n3 != n1) and (n1 + n2 > n3 and n2 + n3 > n1 and n3 + n1 > n2)):
     print('Triangulo ESCALENO')
 else:
     print('Não é um Triangulo')
@@ -111,17 +112,17 @@ else:
 # Desafio 43
 print('\n\nDesafio 43')
 print('IMC')
-peso = float(input('Insira seu peso: '))
-altura = float(input('Insira sua altura: '))
+peso = float(input('[KG] - Insira seu peso: '))
+altura = float(input('[M] - Insira sua altura: '))
 imc = peso / (altura**2)
-print(f'IMC: {imc:.2f}')
+print(f'IMC: {imc:.1f}')
 if(imc < 18.5):
     print('Abaixo do Peso')
-elif(imc >= 18.5 and imc < 25):
+elif(imc < 25):
     print('Peso Ideal')
-elif(imc >= 25 and imc < 30):
+elif(imc < 30):
     print('Sobrepeso')
-elif(imc >= 30 and imc < 40):
+elif(imc < 40):
     print('Obesidade')
 else:
     print('Obesidade Morbida')
@@ -130,6 +131,7 @@ else:
 # Desafio 44
 print('\n\nDesafio 44')
 valor_produto = float(input('Valor do produto: '))
+print('\nFORMAS DE PAGAMENTO:')
 menu = int(input('1 - Pagamento a Vista no Dinheiro/Cheque\n2 - Pagamento a Vista no Cartão\n3 - Pagamento em 2x no cartão\n4 - Pagamento em 3x ou mais\n\n--> '))
 
 if(menu == 1):
@@ -153,23 +155,37 @@ print('\n\nDesafio 45')
 print('Jokenpô')
 user = int(input('\nEscolha:\n\n1 - Pedra\n2 - Papel\n3 - Tesoura\n\n--> '))
 
-pc = choice(['Pedra', 'Papel', 'Tesoura'])
-print(f'Computador escolheu: {pc}')
+itens = ['Pedra', 'Papel', 'Tesoura']
+pc = choice(itens)
 
-if(user == 1 and pc != 'Papel'):
-    if(pc != 'Pedra'):
-        print('Você ganhou!')
+if(0 < user <= 3):
+    print('\nJO')
+    sleep(1)
+    print('KEN')
+    sleep(1)
+    print('PO!!!')
+    sleep(0.5)
+
+    print(f'\nJogador escolheu: {itens[user-1]}')
+    print(f'Computador escolheu: {pc}')
+
+    if(user == 1 and pc != 'Papel'):
+        if(pc != 'Pedra'):
+            print('Você ganhou!')
+        else:
+            print('Empate!')
+    elif(user == 2 and pc != 'Tesoura'):
+        if(pc != 'Papel'):
+            print('Você ganhou!')
+        else:
+            print('Empate!')
+    elif(user == 3 and pc != 'Pedra'):
+        if(pc != 'Tesoura'):
+            print('Você ganhou!')
+        else:
+            print('Empate!')
     else:
-        print('Empate!')
-elif(user == 2 and pc != 'Tesoura'):
-    if(pc != 'Papel'):
-        print('Você ganhou!')
-    else:
-        print('Empate!')
-elif(user == 3 and pc != 'Pedra'):
-    if(pc != 'Tesoura'):
-        print('Você ganhou!')
-    else:
-        print('Empate!')
+        print('Você Perdeu!')
+
 else:
-    print('Você Perdeu!')
+    print('Opção Inválida!')
