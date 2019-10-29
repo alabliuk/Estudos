@@ -6,8 +6,8 @@ from random import randint
 print('\n\nDesafio 57')
 sexo = 'x'
 while(sexo not in 'MmFf'):
-    sexo = input('Digite seu sexo [M/F]: ')
-    if sexo in 'MmFf':
+    sexo = input('Digite seu sexo [M/F]: ').strip()
+    if(sexo in 'MmFf'):
         print(f'Vc digitou o sexo {sexo}')
     else:
         print(f'Sexo invalido! Tente novamente')
@@ -34,16 +34,15 @@ print('\n\nDesafio 59')
 n1 = int(input('Insira o primeiro numero: '))
 n2 = int(input('Insira o segundo numero: '))
 menu = 1
-while(menu < 5):
+while(0 < menu < 5):
     menu = int(input(
         '\n[1] SOMA\n[2] MULTIPLICAR\n[3] MAIOR\n[4] NOVOS NUMEROS\n[5] SAIR DO PROGRAMA\n\n--> '))
-
     if(menu == 1):
         print(f'\n{n1} + {n2} = {n1+n2}')
     elif(menu == 2):
         print(f'\n{n1} * {n2} = {n1*n2}')
     elif(menu == 3):
-        if(n1 > 2):
+        if(n1 > n2):
             print(f'O maior numero é {n1}')
         elif(n1 == n2):
             print(f'Os dois numeros são iguais')
@@ -52,6 +51,10 @@ while(menu < 5):
     elif(menu == 4):
         n1 = int(input('Insira o primeiro numero: '))
         n2 = int(input('Insira o segundo numero: '))
+    elif(menu == 5):
+        print('Encerrando...')
+    else:
+        print('Opção invalida!')
 
 
 # Desafio 60
