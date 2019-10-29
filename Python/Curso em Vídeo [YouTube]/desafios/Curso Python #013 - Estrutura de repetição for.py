@@ -16,7 +16,7 @@ print('Fogos!')
 print('\n\nDesafio 47')
 print('Contagem de numeros pares de 1 a 50')
 for c in range(0, 51, 2):
-    print(c, end = ' - ')
+    print(c, end=' - ')
 print('Fim')
 
 
@@ -56,7 +56,7 @@ p1 = int(input('Insira o valor do primeiro elemento: '))
 razao = int(input('Insira a razao da progressão: '))
 decimo = p1 + (10 - 1) * razao
 for c in range(p1, decimo + razao, razao):
-    print(c, end = ' -> ')
+    print(c, end=' -> ')
 print('Fim')
 
 
@@ -80,15 +80,25 @@ print('\n\nDesafio 53')
 print('Validador de frase palindromo')
 frase = input('Digite sua frase: ')
 
-aux = frase.strip().upper().replace(' ', '')
-print(aux)
+frase_tratada = frase.strip().upper().replace(' ', '')
+frase_inversa = ''
+
+# Inverte a frase
+for c in range(len(frase_tratada) - 1, -1, -1):
+    frase_inversa += frase_tratada[c]
+print(f'Frase Original: {frase_tratada}\nFrase Invertida: {frase_inversa}')
+
+if(frase_tratada == frase_inversa):
+    print('A frase é um polindromo!')
+else:
+    print('A frase NÃO É UM POLINDROMO')
 
 
 # Desafio 54
 print('\n\nDesafio 54')
 qtd_maior = 0
 qtd_menor = 0
-for c in range (1, 8):
+for c in range(1, 8):
     y = int(input(f'{c} - Digite o ano de nascimento: '))
     if(date.today().year - 21 >= y):
         print('Já atingiu a maioridade de 21 anos!')
@@ -96,7 +106,6 @@ for c in range (1, 8):
     else:
         print('Ainda não atingiu a maioridade de 21 anos!')
         qtd_menor += 1
-
 print(f'\nQuantidade de Pessoas acima de 21 anos: {qtd_maior}')
 print(f'Quantidade de Pessoas abaixo de 21 anos: {qtd_menor}')
 
@@ -104,15 +113,18 @@ print(f'Quantidade de Pessoas abaixo de 21 anos: {qtd_menor}')
 # Desafio 55
 print('\n\nDesafio 55')
 peso_maior = 0
-peso_menor = 1000
+peso_menor = 0
 for c in range(1, 6):
     peso = float(input(f'{c} - Digite seu peso: '))
-    if(peso > peso_maior):
+    if(c == 1):
         peso_maior = peso
-    if(peso < peso_menor):
         peso_menor = peso
-
-print(f'Maior peso: {peso_maior:.2f}\nMenor peso: {peso_menor:.2f}')
+    else:
+        if(peso > peso_maior):
+            peso_maior = peso
+        if(peso < peso_menor):
+            peso_menor = peso
+print(f'Maior peso: {peso_maior:.1f}Kg\nMenor peso: {peso_menor:.1f}Kg')
 
 
 # Desafio 56
