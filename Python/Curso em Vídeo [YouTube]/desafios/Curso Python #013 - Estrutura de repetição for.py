@@ -136,7 +136,7 @@ mulheres_menor_vinte_anos = 0
 for c in range(0, 4):
     nome = input('Digite seu nome:')
     idade = int(input('Digite sua idade: '))
-    sexo = input('Digite seu sexo: ')
+    sexo = input('Digite seu sexo [M/F]: ')
     print('\n')
 
     # soma das idades
@@ -148,9 +148,9 @@ for c in range(0, 4):
         nome_homem_mais_velho = nome
 
     # quantidade de mulheres abaixo de vinte anos
-    if(sexo.upper().strip() == 'F' and idade < 20):
+    elif(sexo.upper().strip() == 'F' and idade < 20):
         mulheres_menor_vinte_anos += 1
 
 print(f'Media de idade: {media_idade/4}')
-print(f'Nome do homem mais velho: {nome_homem_mais_velho}')
+print(f'O homem mais velho é o {nome_homem_mais_velho} com idade de {idade_homem_mais_velho} anos')
 print(f'Mulheres abaixo de 20 anos: {mulheres_menor_vinte_anos}')
