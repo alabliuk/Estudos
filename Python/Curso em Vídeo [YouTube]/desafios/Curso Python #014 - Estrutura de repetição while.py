@@ -72,7 +72,6 @@ print(f'{fatorial}! = {calc}')
 print('\n\nDesafio 61')
 p1 = int(input('Insira o valor do primeiro elemento: '))
 razao = int(input('Insira a razao da progressão: '))
-aux = 0
 c = 10
 while(c > 0):
     print(f'{p1}', end=' -> ')
@@ -85,8 +84,7 @@ print('Fim')
 print('\n\nDesafio 62')
 p1 = int(input('Insira o valor do primeiro elemento: '))
 razao = int(input('Insira a razao da progressão: '))
-aux = 0
-c = 10
+count_p1 = c = 10
 while(c > 0):
     print(f'{p1}', end=' -> ')
     p1 += razao
@@ -94,17 +92,24 @@ while(c > 0):
     if(c == 0):
         c = int(input(
             '\nDigite a quantidade adicional de termos a ser exibida, caso deseje sair digite 0.\n--> '))
+        count_p1 += c
 print('Fim')
+print(f'Total de recorrencias: {count_p1}')
 
 
 # Desafio 63
 print('\n\nDesafio 63')
 fibo_max = int(input('Digite o limite da sequencia de Fibonacci: '))
-c = 1
-print('0 -> 1 -> ', end='')
-while(fibo_max > c):
-    print(c, end=' -> ')
-    c += c
+n1 = 0
+n2 = 1
+n3 = 0
+count = 0
+while(fibo_max > count):
+    print(n3, end=' -> ')
+    n3 = n1 + n2
+    n2 = n1
+    n1 = n3
+    count += 1
 print('Fim')
 
 
