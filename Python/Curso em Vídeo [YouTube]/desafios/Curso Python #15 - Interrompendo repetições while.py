@@ -164,7 +164,7 @@ while(True):
         break
 
 
-#Desafio 71
+# Desafio 71
 print('\n\nDesafio 71')
 print('-=-'*20)
 print('\t\tCaixa Eletronico - SAQUE')
@@ -219,5 +219,4 @@ while(True):
         elif(cedula == 10):
             cedula = 1
         else:
-            break       
-        
+            break
